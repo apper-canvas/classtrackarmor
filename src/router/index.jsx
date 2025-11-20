@@ -1,5 +1,5 @@
-import { createBrowserRouter, Suspense } from "react-router-dom";
-import { lazy } from "react";
+import { createBrowserRouter } from "react-router-dom";
+import { lazy, Suspense } from "react";
 import Layout from "@/components/organisms/Layout";
 
 const LoginPage = lazy(() => import("@/components/pages/LoginPage"));
