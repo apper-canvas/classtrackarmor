@@ -1,0 +1,52 @@
+[
+  {
+    "Id": 1,
+    "teacherId": 5,
+    "type": "submission",
+    "message": "John Doe submitted 'API Development with Node.js'",
+    "assignmentId": 3,
+    "studentId": 1,
+    "createdAt": "2024-02-24T22:15:00Z",
+    "read": false
+  },
+  {
+    "Id": 2,
+    "teacherId": 6,
+    "type": "submission",
+    "message": "Jane Smith submitted 'Database Design Project'",
+    "assignmentId": 2,
+    "studentId": 2,
+    "createdAt": "2024-02-20T21:30:00Z",
+    "read": false
+  },
+  {
+    "Id": 3,
+    "teacherId": 6,
+    "type": "submission",
+    "message": "Mike Johnson submitted 'Data Structures Implementation'",
+    "assignmentId": 4,
+    "studentId": 3,
+    "createdAt": "2024-02-27T19:00:00Z",
+    "read": false
+  },
+  {
+    "Id": 4,
+    "teacherId": 5,
+    "type": "deadline",
+    "message": "Assignment 'Machine Learning Classification Project' due in 2 days",
+    "assignmentId": 5,
+    "studentId": null,
+    "createdAt": "2024-03-03T09:00:00Z",
+    "read": true
+  },
+  {
+    "Id": 5,
+    "teacherId": 6,
+    "type": "submission",
+    "message": "Emily Davis submitted 'Introduction to React Components'",
+    "assignmentId": 1,
+    "studentId": 4,
+    "createdAt": "2024-02-15T14:10:00Z",
+    "read": true
+  }
+]

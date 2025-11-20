@@ -1,0 +1,90 @@
+[
+  {
+    "Id": 1,
+    "assignmentId": 1,
+    "studentId": 1,
+    "fileName": "react-components-project.zip",
+    "fileUrl": "uploads/john-doe/react-components-project.zip",
+    "submittedAt": "2024-02-14T20:30:00Z",
+    "status": "graded",
+    "grade": 92,
+    "feedback": "Excellent work on component structure and hook implementation! Your code is well-organized and follows React best practices. Minor suggestion: consider adding PropTypes for better type checking. Overall, great demonstration of React concepts."
+  },
+  {
+    "Id": 2,
+    "assignmentId": 2,
+    "studentId": 1,
+    "fileName": "library-database-design.pdf",
+    "fileUrl": "uploads/john-doe/library-database-design.pdf",
+    "submittedAt": "2024-02-19T18:45:00Z",
+    "status": "graded",
+    "grade": 145,
+    "feedback": "Outstanding database design! Your ERD is comprehensive and the normalization process is properly documented. The complex queries demonstrate strong SQL skills. Excellent attention to detail and professional presentation."
+  },
+  {
+    "Id": 3,
+    "assignmentId": 3,
+    "studentId": 1,
+    "fileName": "task-api-nodejs.zip",
+    "fileUrl": "uploads/john-doe/task-api-nodejs.zip",
+    "submittedAt": "2024-02-24T22:15:00Z",
+    "status": "submitted",
+    "grade": null,
+    "feedback": ""
+  },
+  {
+    "Id": 4,
+    "assignmentId": 1,
+    "studentId": 2,
+    "fileName": "jane-react-components.zip",
+    "fileUrl": "uploads/jane-smith/jane-react-components.zip",
+    "submittedAt": "2024-02-15T16:20:00Z",
+    "status": "graded",
+    "grade": 88,
+    "feedback": "Good implementation of React components and hooks. Your state management is effective and the component hierarchy makes sense. Could improve error handling and add more detailed comments. Keep up the good work!"
+  },
+  {
+    "Id": 5,
+    "assignmentId": 2,
+    "studentId": 2,
+    "fileName": "library-db-jane.pdf",
+    "fileUrl": "uploads/jane-smith/library-db-jane.pdf",
+    "submittedAt": "2024-02-20T21:30:00Z",
+    "status": "submitted",
+    "grade": null,
+    "feedback": ""
+  },
+  {
+    "Id": 6,
+    "assignmentId": 1,
+    "studentId": 3,
+    "fileName": "mike-react-project.zip",
+    "fileUrl": "uploads/mike-johnson/mike-react-project.zip",
+    "submittedAt": "2024-02-15T23:45:00Z",
+    "status": "graded",
+    "grade": 85,
+    "feedback": "Solid React implementation with good use of hooks. Component structure is logical. Areas for improvement: add more comprehensive error handling and consider performance optimization for larger datasets."
+  },
+  {
+    "Id": 7,
+    "assignmentId": 4,
+    "studentId": 3,
+    "fileName": "data-structures-mike.cpp",
+    "fileUrl": "uploads/mike-johnson/data-structures-mike.cpp",
+    "submittedAt": "2024-02-27T19:00:00Z",
+    "status": "submitted",
+    "grade": null,
+    "feedback": ""
+  },
+  {
+    "Id": 8,
+    "assignmentId": 1,
+    "studentId": 4,
+    "fileName": "emily-react-app.zip",
+    "fileUrl": "uploads/emily-davis/emily-react-app.zip",
+    "submittedAt": "2024-02-15T14:10:00Z",
+    "status": "graded",
+    "grade": 95,
+    "feedback": "Exceptional work! Your React application demonstrates deep understanding of component lifecycle, state management, and modern React patterns. Code quality is outstanding with excellent documentation. Perfect implementation!"
+  }
+]

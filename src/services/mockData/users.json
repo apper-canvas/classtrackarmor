@@ -1,0 +1,44 @@
+[
+  {
+    "Id": 1,
+    "name": "John Doe",
+    "email": "john.doe@student.edu",
+    "role": "student",
+    "password": "password123"
+  },
+  {
+    "Id": 2,
+    "name": "Jane Smith",
+    "email": "jane.smith@student.edu",
+    "role": "student",
+    "password": "password123"
+  },
+  {
+    "Id": 3,
+    "name": "Mike Johnson",
+    "email": "mike.johnson@student.edu",
+    "role": "student",
+    "password": "password123"
+  },
+  {
+    "Id": 4,
+    "name": "Emily Davis",
+    "email": "emily.davis@student.edu",
+    "role": "student",
+    "password": "password123"
+  },
+  {
+    "Id": 5,
+    "name": "Sarah Johnson",
+    "email": "sarah.johnson@teacher.edu",
+    "role": "teacher",
+    "password": "password123"
+  },
+  {
+    "Id": 6,
+    "name": "Dr. Robert Wilson",
+    "email": "robert.wilson@teacher.edu",
+    "role": "teacher",
+    "password": "password123"
+  }
+]

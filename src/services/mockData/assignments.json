@@ -1,0 +1,47 @@
+[
+  {
+    "Id": 1,
+    "title": "Introduction to React Components",
+    "description": "Create a simple React application that demonstrates the use of functional and class components. Your submission should include:\n\n1. A parent component that manages state\n2. At least 3 child components that receive props\n3. Implementation of useState and useEffect hooks\n4. Proper component structure and organization\n5. A README file explaining your approach\n\nMake sure to follow React best practices and include comments explaining your code.",
+    "dueDate": "2024-02-15T23:59:00Z",
+    "pointsPossible": 100,
+    "createdBy": 5,
+    "createdAt": "2024-01-15T10:00:00Z"
+  },
+  {
+    "Id": 2,
+    "title": "Database Design Project",
+    "description": "Design and implement a relational database for a library management system. Your submission should include:\n\n1. Entity-Relationship Diagram (ERD)\n2. Normalized database schema (3NF)\n3. SQL scripts to create tables and relationships\n4. Sample data insertion queries\n5. At least 5 complex queries demonstrating joins, aggregations, and subqueries\n\nProvide documentation explaining your design decisions and normalization process.",
+    "dueDate": "2024-02-20T23:59:00Z",
+    "pointsPossible": 150,
+    "createdBy": 6,
+    "createdAt": "2024-01-20T09:00:00Z"
+  },
+  {
+    "Id": 3,
+    "title": "API Development with Node.js",
+    "description": "Build a RESTful API for a task management application using Node.js and Express. Requirements:\n\n1. User authentication and authorization\n2. CRUD operations for tasks and projects\n3. Input validation and error handling\n4. Database integration (MongoDB or PostgreSQL)\n5. API documentation using Swagger\n6. Unit tests with at least 80% coverage\n\nDeploy your API and provide the live endpoint URL along with your source code.",
+    "dueDate": "2024-02-25T23:59:00Z",
+    "pointsPossible": 120,
+    "createdBy": 5,
+    "createdAt": "2024-01-25T11:00:00Z"
+  },
+  {
+    "Id": 4,
+    "title": "Data Structures Implementation",
+    "description": "Implement the following data structures from scratch in your preferred programming language:\n\n1. Binary Search Tree with insertion, deletion, and search operations\n2. Hash Table with collision handling\n3. Graph representation with BFS and DFS algorithms\n4. Priority Queue using heap\n\nInclude time and space complexity analysis for each operation. Write comprehensive test cases to validate your implementations.",
+    "dueDate": "2024-02-28T23:59:00Z",
+    "pointsPossible": 130,
+    "createdBy": 6,
+    "createdAt": "2024-02-01T08:00:00Z"
+  },
+  {
+    "Id": 5,
+    "title": "Machine Learning Classification Project",
+    "description": "Develop a machine learning model to classify customer churn using the provided dataset. Your project should include:\n\n1. Exploratory Data Analysis with visualizations\n2. Data preprocessing and feature engineering\n3. Implementation of at least 3 different classification algorithms\n4. Model evaluation using appropriate metrics\n5. Hyperparameter tuning and cross-validation\n6. Final model deployment as a web service\n\nSubmit your Jupyter notebook, Python scripts, and a detailed report explaining your methodology and findings.",
+    "dueDate": "2024-03-05T23:59:00Z",
+    "pointsPossible": 140,
+    "createdBy": 5,
+    "createdAt": "2024-02-05T10:30:00Z"
+  }
+]
