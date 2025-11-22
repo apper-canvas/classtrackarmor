@@ -8,7 +8,6 @@ const Companies = lazy(() => import("@/components/pages/Companies"));
 const Sites = lazy(() => import("@/components/pages/Sites"));
 const Users = lazy(() => import("@/components/pages/Users"));
 const Settings = lazy(() => import("@/components/pages/Settings"));
-const AdminPage = lazy(() => import("@/components/pages/AdminPage"));
 const NotFound = lazy(() => import("@/components/pages/NotFound"));
 
 const LoadingFallback = () => (
@@ -72,14 +71,6 @@ const mainRoutes = [
     element: (
       <Suspense fallback={<LoadingFallback />}>
         <Settings />
-      </Suspense>
-    )
-  },
-{
-    path: "admin",
-    element: (
-      <Suspense fallback={<LoadingFallback />}>
-        <AdminPage />
       </Suspense>
     )
   },

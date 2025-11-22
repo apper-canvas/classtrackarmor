@@ -82,10 +82,6 @@ export function verifyRouteAccess(config, user) {
       case 'authenticated':
         conditionResult = !!user;
 break;
-      case 'admin':
-        // Admin role access - requires authentication and ADMIN role
-        conditionResult = user && user.roleCode === 'ADMIN';
-        break;
       case 'ceo':
         // CEO role access - requires authentication and CEO role
         conditionResult = user && user.roleCode === 'CEO';

@@ -1,16 +1,14 @@
 import React from "react";
 import { NavLink, useLocation } from "react-router-dom";
-import { useAuth } from "@/context/AuthContext";
 import { cn } from "@/utils/cn";
 import { useLanguage } from "@/hooks/useLanguage";
 import { useTranslation } from "@/hooks/useTranslation";
 import ApperIcon from "@/components/ApperIcon";
 
 const Sidebar = ({ onClose }) => {
-const location = useLocation();
+  const location = useLocation();
   const { isRTL } = useLanguage();
   const { t } = useTranslation();
-  const { user } = useAuth();
 
 const navigation = [
     { 
@@ -39,11 +37,6 @@ const navigation = [
       href: "/users", 
       icon: "Users" 
     },
-    ...(user?.roleCode === 'ADMIN' ? [{
-      name: t("nav.admin"),
-      href: "/admin",
-      icon: "Shield"
-    }] : []),
     { 
       name: t("nav.settings"), 
       href: "/settings", 
