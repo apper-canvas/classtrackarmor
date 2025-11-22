@@ -1,0 +1,484 @@
+{
+  "/": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Dashboard requires authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login",
+      "excludeRedirectQuery": false
+    }
+  },
+  "/login": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Login page is public",
+            "rule": "public"
+          }
+        ],
+        "operator": "OR"
+      }
+    }
+  },
+  "/signup": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Signup page is public",
+            "rule": "public"
+          }
+        ],
+        "operator": "OR"
+      }
+    }
+  },
+  "/callback": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Callback page is public",
+            "rule": "public"
+          }
+        ],
+        "operator": "OR"
+      }
+    }
+  },
+  "/error": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Error page is public",
+            "rule": "public"
+          }
+        ],
+        "operator": "OR"
+      }
+    }
+  },
+  "/reset-password/*": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Password reset is public",
+            "rule": "public"
+          }
+        ],
+        "operator": "OR"
+      }
+    }
+  },
+  "/prompt-password/*": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Password prompt is public",
+            "rule": "public"
+          }
+        ],
+        "operator": "OR"
+      }
+    }
+  },
+  "/analytics": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Analytics requires authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/analytics/*": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Analytics features require authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/audits": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Audits require authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/audits/*": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Audit features require authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/checklists": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Checklists require authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/temperature-records": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Temperature records require authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/haccp": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "HACCP management requires authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/accidents-incidents": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Incidents require authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/risk-assessments": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Risk assessments require authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/chemical-safety": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Chemical safety requires authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/property-inspections": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Property inspections require authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/food-complaints": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Food complaints require authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/supply-chain-complaints": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Supply chain complaints require authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/task-manager": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Task manager requires authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/suppliers-contractors": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Suppliers management requires authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/documents": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Document centre requires authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/safety-policies": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Safety policies require authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/resources": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Resources centre requires authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/features": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Features page requires authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/feature-areas": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Feature areas management requires authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/regulatory-alignment": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Regulatory alignment requires authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/workflows": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Workflows require authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/workflows/*": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Workflow details require authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/companies": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Company management requires authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/sites": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Site management requires authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/users": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "User management requires authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/settings": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Settings require authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/training": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Training requires authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/enforcement-visits": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "Enforcement visits require authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  },
+  "/*": {
+    "allow": {
+      "when": {
+        "conditions": [
+          {
+            "label": "All other pages require authentication",
+            "rule": "authenticated"
+          }
+        ]
+      },
+      "redirectOnDeny": "/login"
+    }
+  }
+}

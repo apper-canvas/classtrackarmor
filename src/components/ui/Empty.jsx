@@ -1,41 +1,37 @@
 import React from "react";
 import { cn } from "@/utils/cn";
 import ApperIcon from "@/components/ApperIcon";
-import Button from "@/components/atoms/Button";
 
 const Empty = ({ 
-  icon = "FileX",
-  title = "No data found",
-  message = "There's nothing to show here yet.",
+  className,
+  icon = "Inbox",
+  title = "No data available",
+  message = "Get started by adding your first item.",
   actionLabel,
-  onAction,
-  className 
+  onAction
 }) => {
   return (
-    <div className={cn(
-      "flex flex-col items-center justify-center p-12 text-center",
-      className
-    )}>
-      <div className="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mb-4">
-        <ApperIcon name={icon} className="h-8 w-8 text-slate-400" />
+    <div className={cn("min-h-[400px] flex items-center justify-center", className)}>
+      <div className="text-center space-y-6 max-w-md mx-auto px-4">
+        <div className="w-20 h-20 mx-auto bg-gradient-to-br from-slate-100 to-slate-200 rounded-full flex items-center justify-center">
+          <ApperIcon name={icon} className="h-10 w-10 text-slate-400" />
+        </div>
+        
+        <div className="space-y-2">
+          <h3 className="text-xl font-semibold text-slate-900">{title}</h3>
+          <p className="text-slate-600 leading-relaxed">{message}</p>
+        </div>
+
+        {actionLabel && onAction && (
+          <button
+            onClick={onAction}
+            className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-primary-600 to-sky-500 text-white font-medium rounded-lg hover:from-primary-700 hover:to-sky-600 transition-all duration-200 transform hover:scale-105 shadow-lg"
+          >
+            <ApperIcon name="Plus" className="h-4 w-4 mr-2" />
+            {actionLabel}
+          </button>
+        )}
       </div>
-      
-      <h3 className="text-lg font-medium text-slate-900 mb-2">
-        {title}
-      </h3>
-      
-      <p className="text-slate-500 mb-6 max-w-md">
-        {message}
-      </p>
-      
-      {actionLabel && onAction && (
-        <Button
-          onClick={onAction}
-          icon="Plus"
-        >
-          {actionLabel}
-        </Button>
-      )}
     </div>
   );
 };

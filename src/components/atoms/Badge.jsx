@@ -1,29 +1,37 @@
-import React, { forwardRef } from "react";
+import React from "react";
 import { cn } from "@/utils/cn";
 
-const Badge = forwardRef(({ className, variant = "default", ...props }, ref) => {
+const Badge = ({ 
+  children, 
+  variant = "default", 
+  size = "sm",
+  className 
+}) => {
+  const baseClasses = "inline-flex items-center font-medium rounded-full";
+  
   const variants = {
-    default: "bg-slate-100 text-slate-800 hover:bg-slate-200",
-    success: "bg-emerald-100 text-emerald-800 hover:bg-emerald-200",
-    warning: "bg-amber-100 text-amber-800 hover:bg-amber-200",
-    danger: "bg-red-100 text-red-800 hover:bg-red-200",
-    info: "bg-blue-100 text-blue-800 hover:bg-blue-200",
-    secondary: "bg-slate-50 text-slate-600 border border-slate-200 hover:bg-slate-100"
+    default: "bg-gradient-to-r from-slate-100 to-slate-200 text-slate-700",
+    primary: "bg-gradient-to-r from-primary-100 to-primary-200 text-primary-800",
+    success: "bg-gradient-to-r from-emerald-100 to-emerald-200 text-emerald-800",
+    warning: "bg-gradient-to-r from-amber-100 to-amber-200 text-amber-800",
+    danger: "bg-gradient-to-r from-red-100 to-red-200 text-red-800",
+    ceo: "bg-gradient-to-r from-blue-100 to-blue-200 text-blue-800",
+    manager: "bg-gradient-to-r from-purple-100 to-purple-200 text-purple-800",
+    user: "bg-gradient-to-r from-gray-100 to-gray-200 text-gray-800"
+  };
+
+  const sizes = {
+    xs: "px-2 py-0.5 text-xs",
+    sm: "px-2.5 py-0.5 text-sm",
+    md: "px-3 py-1 text-sm",
+    lg: "px-4 py-1.5 text-base"
   };
 
   return (
-    <div
-      className={cn(
-        "inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium transition-colors duration-200",
-        variants[variant],
-        className
-      )}
-      ref={ref}
-      {...props}
-    />
+    <span className={cn(baseClasses, variants[variant], sizes[size], className)}>
+      {children}
+    </span>
   );
-});
-
-Badge.displayName = "Badge";
+};
 
 export default Badge;

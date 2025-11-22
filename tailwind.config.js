@@ -10,9 +10,9 @@ export default {
         primary: {
           50: '#eff6ff',
           100: '#dbeafe',
-          500: '#2563eb',
-          600: '#1d4ed8',
-          700: '#1e40af',
+          500: '#3b82f6',
+          600: '#2563eb',
+          700: '#1d4ed8',
           900: '#1e3a8a',
         },
         slate: {
@@ -25,13 +25,17 @@ export default {
           800: '#1e293b',
           900: '#0f172a',
         },
-        amber: {
-          500: '#f59e0b',
-          600: '#d97706',
+        sky: {
+          500: '#0ea5e9',
+          600: '#0284c7',
         },
         emerald: {
           500: '#10b981',
           600: '#059669',
+        },
+        amber: {
+          500: '#f59e0b',
+          600: '#d97706',
         },
         red: {
           500: '#ef4444',
@@ -39,8 +43,13 @@ export default {
         }
       },
       fontFamily: {
-        inter: ['Inter', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        arabic: ['Noto Sans Arabic', 'system-ui', 'sans-serif'],
       },
+      spacing: {
+        '18': '4.5rem',
+        '88': '22rem',
+      }
     },
   },
   plugins: [],
