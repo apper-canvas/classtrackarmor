@@ -20,7 +20,6 @@ const Layout = () => {
       )}
 
       {/* Desktop Sidebar */}
-{/* Desktop Sidebar */}
       <div className={cn("hidden lg:block fixed inset-y-0 w-64 z-30", isRTL ? "right-0" : "left-0")}>
         <Sidebar />
       </div>
@@ -33,14 +32,6 @@ const Layout = () => {
       )}>
         <Sidebar onClose={() => setSidebarOpen(false)} />
       </div>
-
-      {/* Mobile Overlay */}
-      {sidebarOpen && (
-        <div 
-          className="lg:hidden fixed inset-0 bg-black/50 z-40" 
-          onClick={() => setSidebarOpen(false)}
-        />
-      )}
 
       {/* Main Content */}
       <div className={cn("lg:pl-64", isRTL && "lg:pl-0 lg:pr-64")}>

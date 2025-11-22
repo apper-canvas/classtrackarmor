@@ -1,0 +1,50 @@
+[
+  {
+    "Id": 1,
+    "companyId": 1,
+    "nameAr": "فندق الأطلس الرباط",
+    "nameFr": "Hôtel Atlas Rabat",
+    "nameEn": "Atlas Hotel Rabat",
+    "city": "Rabat",
+    "address": "Avenue Mohammed V, Rabat 10000",
+    "managerId": 2,
+    "status": "active",
+    "createdAt": "2024-01-20T09:00:00Z"
+  },
+  {
+    "Id": 2,
+    "companyId": 1,
+    "nameAr": "فندق الأطلس الدار البيضاء",
+    "nameFr": "Hôtel Atlas Casablanca",
+    "nameEn": "Atlas Hotel Casablanca",
+    "city": "Casablanca",
+    "address": "Boulevard de la Corniche, Casablanca 20000",
+    "managerId": 3,
+    "status": "active",
+    "createdAt": "2024-01-25T11:30:00Z"
+  },
+  {
+    "Id": 3,
+    "companyId": 2,
+    "nameAr": "منتجع الصحراء مراكش",
+    "nameFr": "Resort Sahara Marrakech",
+    "nameEn": "Sahara Resort Marrakech",
+    "city": "Marrakech",
+    "address": "Route de l'Ourika, Marrakech 40000",
+    "managerId": 4,
+    "status": "active",
+    "createdAt": "2024-02-25T13:15:00Z"
+  },
+  {
+    "Id": 4,
+    "companyId": 3,
+    "nameAr": "منتجع البحر الأبيض المتوسط أغادير",
+    "nameFr": "Resort Méditerranéen Agadir",
+    "nameEn": "Mediterranean Resort Agadir",
+    "city": "Agadir",
+    "address": "Boulevard du 20 Août, Agadir 80000",
+    "managerId": 5,
+    "status": "active",
+    "createdAt": "2024-03-15T16:20:00Z"
+  }
+]

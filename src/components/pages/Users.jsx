@@ -34,15 +34,14 @@ const Users = () => {
         roleService.getAll()
       ]);
 
-// Combine users with site, company, and role data
+      // Combine users with site, company, and role data
       const usersWithDetailsData = usersData.map(user => {
-        const site = sitesData.find(s => s.Id === user.siteId_c?.Id || user.siteId_c);
-        const company = site ? companiesData.find(c => c.Id === site.companyId_c?.Id || site.companyId_c) : null;
-        const role = rolesData.find(r => r.Id === user.roleId_c?.Id || user.roleId_c);
+        const site = sitesData.find(s => s.Id === user.siteId);
+        const company = site ? companiesData.find(c => c.Id === site.companyId) : null;
+        const role = rolesData.find(r => r.Id === user.roleId);
 
         return {
           ...user,
-          Id: user.Id,
           site,
           company,
           role
@@ -62,23 +61,23 @@ const Users = () => {
     loadUsers();
   }, []);
 
-const getUserName = (user) => {
-    return user[`fullName${currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1)}_c`] || user.fullNameEn_c;
+  const getUserName = (user) => {
+    return user[`fullName${currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1)}`] || user.fullNameEn;
   };
 
   const getSiteName = (site) => {
     if (!site) return "No Site";
-return site[`name${currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1)}_c`] || site.nameEn_c;
+    return site[`name${currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1)}`] || site.nameEn;
   };
 
   const getCompanyName = (company) => {
-if (!company) return "Unknown Company";
-    return company[`name${currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1)}_c`] || company.nameEn_c;
+    if (!company) return "Unknown Company";
+    return company[`name${currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1)}`] || company.nameEn;
   };
 
   const getRoleName = (role) => {
-if (!role) return "No Role";
-    return role[`name${currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1)}_c`] || role.nameEn_c;
+    if (!role) return "No Role";
+    return role[`name${currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1)}`] || role.nameEn;
   };
 
   const getStatusVariant = (status) => {
@@ -166,14 +165,14 @@ if (!role) return "No Role";
                     <p className="text-sm text-slate-500">{user.email}</p>
                   </div>
                 </div>
-<Badge variant={getStatusVariant(user.status_c)}>
-                  {t(`status.${user.status_c}`)}
+                <Badge variant={getStatusVariant(user.status)}>
+                  {t(`status.${user.status}`)}
                 </Badge>
               </div>
 
               {/* Role Badge */}
-<div className="flex justify-center">
-                <Badge variant={getRoleVariant(user.role?.code_c)} size="md">
+              <div className="flex justify-center">
+                <Badge variant={getRoleVariant(user.role?.code)} size="md">
                   {getRoleName(user.role)}
                 </Badge>
               </div>
@@ -192,17 +191,17 @@ if (!role) return "No Role";
                 </div>
                 <div className="flex items-center text-sm text-slate-600">
                   <ApperIcon name="Globe" className="h-4 w-4 mr-2" />
-<span className="font-medium">Language:</span>
-                  <span className="ml-1">{user.preferredLanguage_c?.toUpperCase()}</span>
+                  <span className="font-medium">Language:</span>
+                  <span className="ml-1">{user.preferredLanguage.toUpperCase()}</span>
                 </div>
               </div>
 
               {/* Last Login */}
               <div className="pt-4 border-t border-slate-200">
                 <div className="flex items-center text-sm text-slate-500">
-<ApperIcon name="Clock" className="h-4 w-4 mr-2" />
-                  {user.lastLoginAt_c ? (
-                    <span>Last login {formatDistanceToNow(new Date(user.lastLoginAt_c))} ago</span>
+                  <ApperIcon name="Clock" className="h-4 w-4 mr-2" />
+                  {user.lastLoginAt ? (
+                    <span>Last login {formatDistanceToNow(new Date(user.lastLoginAt))} ago</span>
                   ) : (
                     <span>Never logged in</span>
                   )}
@@ -245,21 +244,21 @@ if (!role) return "No Role";
             <p className="text-3xl font-bold text-slate-600">{usersWithDetails.length}</p>
             <p className="text-sm text-slate-500 font-medium">Total Users</p>
           </div>
-<div>
+          <div>
             <p className="text-3xl font-bold text-emerald-600">
-              {usersWithDetails.filter(user => user.status_c === "active").length}
+              {usersWithDetails.filter(user => user.status === "active").length}
             </p>
             <p className="text-sm text-slate-500 font-medium">Active Users</p>
           </div>
-<div>
+          <div>
             <p className="text-3xl font-bold text-amber-600">
-              {usersWithDetails.filter(user => user.status_c === "invited").length}
+              {usersWithDetails.filter(user => user.status === "invited").length}
             </p>
             <p className="text-sm text-slate-500 font-medium">Pending Invites</p>
           </div>
-<div>
+          <div>
             <p className="text-3xl font-bold text-blue-600">
-              {usersWithDetails.filter(user => user.role?.code_c === "ceo").length}
+              {usersWithDetails.filter(user => user.role?.code === "ceo").length}
             </p>
             <p className="text-sm text-slate-500 font-medium">CEOs</p>
           </div>
@@ -270,8 +269,8 @@ if (!role) return "No Role";
       <div className="bg-white rounded-xl shadow-lg p-6 border border-slate-200">
         <h2 className="text-lg font-semibold text-slate-900 mb-4">Role Distribution</h2>
         <div className="space-y-4">
-{["ceo", "manager", "user"].map(roleCode => {
-            const roleUsers = usersWithDetails.filter(user => user.role?.code_c === roleCode);
+          {["ceo", "manager", "user"].map(roleCode => {
+            const roleUsers = usersWithDetails.filter(user => user.role?.code === roleCode);
             const percentage = usersWithDetails.length > 0 ? (roleUsers.length / usersWithDetails.length) * 100 : 0;
             
             return (

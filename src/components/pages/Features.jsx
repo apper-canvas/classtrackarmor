@@ -1,9 +1,9 @@
 import React from "react";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useLanguage } from "@/hooks/useLanguage";
-import { cn } from "@/utils/cn";
 import ApperIcon from "@/components/ApperIcon";
 import Card from "@/components/atoms/Card";
+import { cn } from "@/utils/cn";
 
 const Features = () => {
   const { t } = useTranslation();
@@ -434,184 +434,108 @@ const Features = () => {
         fr: "Articles de contenu, catégories, termes de recherche, terminologie réglementaire, matériels éducatifs",
         ar: "مقالات المحتوى، الفئات، مصطلحات البحث، المصطلحات التنظيمية، المواد التعليمية"
       }
-}
+    }
   ];
 
   return (
-    <div className="space-y-8">
-      {/* Header */}
-      <div className="text-center max-w-4xl mx-auto">
-        <h1 className="text-3xl font-bold text-slate-900 mb-4">
-          {t('features.title', {
-            en: "SafetyHub Morocco Features",
-            fr: "Fonctionnalités SafetyHub Maroc",
-            ar: "ميزات مركز السلامة المغرب"
-          })}
-        </h1>
-        <p className="text-lg text-slate-600 leading-relaxed">
-          {t('features.description', {
-            en: "Comprehensive safety and compliance management system designed specifically for Moroccan hospitality establishments, ensuring adherence to ONSSA, Labour Code, and other regulatory requirements.",
-            fr: "Système complet de gestion de la sécurité et de la conformité conçu spécifiquement pour les établissements d'accueil marocains, garantissant le respect des exigences ONSSA, Code du Travail et autres réglementaires.",
-            ar: "نظام شامل لإدارة السلامة والامتثال مصمم خصيصاً للمنشآت الفندقية المغربية، لضمان الالتزام بمتطلبات أونسا وقانون الشغل والمتطلبات التنظيمية الأخرى."
-          })}
-        </p>
-      </div>
-
-      {/* Regulatory Alignment Link */}
-<Card 
-        className="p-6 bg-gradient-to-r from-blue-500 to-indigo-600 text-white cursor-pointer hover:shadow-lg transition-all duration-200"
-      >
-        <div className="flex items-center gap-4">
-          <div className="flex-shrink-0">
-            <ApperIcon name="Scale" size={32} className="text-white" />
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100">
+      <div className="container mx-auto px-4 py-8">
+        {/* Header */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-600 to-sky-500 rounded-2xl mb-6">
+            <ApperIcon name="Layers" className="w-8 h-8 text-white" />
           </div>
-          <div className="flex-grow">
-            <h2 className="text-xl font-semibold mb-2">
-              {t('features.regulatoryAlignment.title', {
-                en: "Moroccan Regulatory Alignment",
-                fr: "Alignement réglementaire marocain",
-                ar: "التوافق التنظيمي المغربي"
-              })}
-            </h2>
-            <p className="text-blue-100 text-sm">
-              {t('features.regulatoryAlignment.description', {
-                en: "View comprehensive mapping of all feature areas to Moroccan regulatory requirements including ONSSA, Labour Code, Protection Civile, and municipal regulations.",
-                fr: "Voir la cartographie complète de tous les domaines fonctionnels aux exigences réglementaires marocaines incluant ONSSA, Code du Travail, Protection Civile et réglementations municipales.",
-                ar: "عرض خريطة شاملة لجميع المجالات الوظيفية لمتطلبات التنظيم المغربية بما في ذلك أونسا وقانون الشغل والحماية المدنية والأنظمة البلدية."
-              })}
+          <h1 className="text-4xl font-bold bg-gradient-to-r from-primary-600 to-sky-500 bg-clip-text text-transparent mb-4">
+            {t("features.title")}
+          </h1>
+          <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            {t("features.subtitle")}
+          </p>
+        </div>
+
+        {/* Features Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
+          {featureAreas.map((feature) => (
+            <Card
+              key={feature.key}
+              className="h-full overflow-hidden hover:shadow-xl transition-all duration-300 hover:scale-105 border-0"
+              gradient={true}
+            >
+              <div className="p-6 h-full flex flex-col">
+                {/* Header */}
+                <div className="flex items-center space-x-4 mb-6">
+                  <div className={cn(
+                    "w-12 h-12 rounded-xl bg-gradient-to-br flex items-center justify-center",
+                    feature.color
+                  )}>
+                    <ApperIcon name={feature.icon} className="w-6 h-6 text-white" />
+                  </div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-slate-800 mb-1">
+                      {t(`feature.${feature.key}.name`)}
+                    </h3>
+                  </div>
+                </div>
+
+                {/* Content sections */}
+                <div className="flex-1 space-y-6">
+                  {/* Purpose */}
+                  <div>
+                    <h4 className="text-sm font-semibold text-primary-600 uppercase tracking-wide mb-2">
+                      {t("feature.purpose")}
+                    </h4>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      {feature.purpose[isRTL ? 'ar' : 'en']}
+                    </p>
+                  </div>
+
+                  {/* Data Objects */}
+                  <div>
+                    <h4 className="text-sm font-semibold text-emerald-600 uppercase tracking-wide mb-2">
+                      {t("feature.data_objects")}
+                    </h4>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      {feature.dataObjects[isRTL ? 'ar' : 'en']}
+                    </p>
+                  </div>
+
+                  {/* Site & User Relationship */}
+                  <div>
+                    <h4 className="text-sm font-semibold text-amber-600 uppercase tracking-wide mb-2">
+                      {t("feature.site_user_relationship")}
+                    </h4>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      {feature.siteRelationship[isRTL ? 'ar' : 'en']}
+                    </p>
+                  </div>
+
+                  {/* Multilingual Needs */}
+                  <div>
+                    <h4 className="text-sm font-semibold text-violet-600 uppercase tracking-wide mb-2">
+                      {t("feature.multilingual_needs")}
+                    </h4>
+                    <p className="text-sm text-slate-600 leading-relaxed">
+                      {feature.multilingualNeeds[isRTL ? 'ar' : 'en']}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          ))}
+        </div>
+
+        {/* Footer Note */}
+        <div className="mt-16 text-center">
+          <div className="inline-flex items-center justify-center p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-slate-200 shadow-sm">
+            <ApperIcon name="Info" className="w-5 h-5 text-primary-600 mr-3" />
+            <p className="text-sm text-slate-600">
+              <span className="font-medium">Next Steps:</span> This overview provides the conceptual foundation for detailed workflow design and UI implementation.
             </p>
           </div>
-          <div className="flex-shrink-0">
-            <ApperIcon name="ChevronRight" size={20} className="text-white rtl:rotate-180" />
-          </div>
         </div>
-      </Card>
-
-      {/* Features Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {featureAreas.map((feature) => (
-          <Card 
-            key={feature.key}
-            className="group hover:shadow-lg transition-all duration-200 cursor-pointer"
-          >
-            <div className={`h-2 bg-gradient-to-r ${feature.color}`} />
-            <div className="p-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className={`p-3 rounded-lg bg-gradient-to-r ${feature.color} text-white`}>
-                  <ApperIcon name={feature.icon} size={24} />
-                </div>
-                <div className="flex-grow">
-                  <h3 className="font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">
-                    {t(`features.${feature.key}.title`, {
-                      en: feature.key.split('_').map(word => 
-                        word.charAt(0).toUpperCase() + word.slice(1)
-                      ).join(' '),
-                      fr: feature.key.split('_').map(word => 
-                        word.charAt(0).toUpperCase() + word.slice(1)
-                      ).join(' '),
-                      ar: feature.key.split('_').map(word => 
-                        word.charAt(0).toUpperCase() + word.slice(1)
-                      ).join(' ')
-                    })}
-                  </h3>
-                </div>
-              </div>
-
-              <div className="space-y-4">
-                {/* Purpose */}
-                <div>
-                  <h4 className="text-sm font-medium text-slate-700 mb-2">
-                    {t('features.labels.purpose', {
-                      en: "Purpose",
-                      fr: "Objectif",
-                      ar: "الغرض"
-                    })}
-                  </h4>
-<p className="text-sm text-slate-600 leading-relaxed">
-                    {typeof feature.purpose === 'object' 
-                      ? (feature.purpose[isRTL ? 'ar' : 'en'] || feature.purpose.en || feature.purpose.fr || feature.purpose.ar || '') 
-                      : (feature.purpose || '')}
-                  </p>
-                </div>
-
-                {/* Data Objects */}
-                <div>
-                  <h4 className="text-sm font-medium text-slate-700 mb-2">
-                    {t('features.labels.dataObjects', {
-                      en: "Data Objects",
-                      fr: "Objets de données",
-                      ar: "كائنات البيانات"
-                    })}
-                  </h4>
-<p className="text-sm text-slate-600">
-                    {typeof feature.dataObjects === 'object' 
-                      ? (feature.dataObjects[isRTL ? 'ar' : 'en'] || feature.dataObjects.en || feature.dataObjects.fr || feature.dataObjects.ar || '') 
-                      : (feature.dataObjects || '')}
-                  </p>
-                </div>
-
-                {/* Site Relationship */}
-                <div>
-                  <h4 className="text-sm font-medium text-slate-700 mb-2">
-                    {t('features.labels.siteRelationship', {
-                      en: "Site Relationship",
-                      fr: "Relation au site",
-                      ar: "علاقة الموقع"
-                    })}
-                  </h4>
-<p className="text-sm text-slate-600">
-                    {typeof feature.siteRelationship === 'object' 
-                      ? (feature.siteRelationship[isRTL ? 'ar' : 'en'] || feature.siteRelationship.en || feature.siteRelationship.fr || feature.siteRelationship.ar || '') 
-                      : (feature.siteRelationship || '')}
-                  </p>
-                </div>
-
-                {/* Multilingual Needs */}
-                <div>
-                  <h4 className="text-sm font-medium text-slate-700 mb-2">
-                    {t('features.labels.multilingualNeeds', {
-                      en: "Multilingual Requirements",
-                      fr: "Exigences multilingues",
-                      ar: "المتطلبات متعددة اللغات"
-                    })}
-                  </h4>
-<p className="text-sm text-slate-600">
-                    {typeof feature.multilingualNeeds === 'object' 
-                      ? (feature.multilingualNeeds[isRTL ? 'ar' : 'en'] || feature.multilingualNeeds.en || feature.multilingualNeeds.fr || feature.multilingualNeeds.ar || '') 
-                      : (feature.multilingualNeeds || '')}
-                  </p>
-                </div>
-              </div>
-            </div>
-          </Card>
-        ))}
       </div>
-
-      {/* Bottom CTA */}
-      <Card className="p-8 text-center bg-gradient-to-r from-slate-50 to-slate-100">
-        <h2 className="text-2xl font-bold text-slate-900 mb-4">
-          {t('features.cta.title', {
-            en: "Ready to Get Started?",
-            fr: "Prêt à commencer?",
-            ar: "هل أنت مستعد للبدء؟"
-          })}
-        </h2>
-        <p className="text-slate-600 mb-6 max-w-2xl mx-auto">
-          {t('features.cta.description', {
-            en: "Contact our team to learn how SafetyHub Morocco can help your establishment achieve full regulatory compliance while improving operational efficiency.",
-            fr: "Contactez notre équipe pour savoir comment SafetyHub Maroc peut aider votre établissement à atteindre la pleine conformité réglementaire tout en améliorant l'efficacité opérationnelle.",
-            ar: "اتصل بفريقنا لمعرفة كيف يمكن لمركز السلامة المغرب مساعدة منشأتك في تحقيق الامتثال التنظيمي الكامل مع تحسين الكفاءة التشغيلية."
-          })}
-        </p>
-        <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors">
-          {t('features.cta.button', {
-            en: "Contact Us",
-            fr: "Contactez-nous",
-            ar: "اتصل بنا"
-          })}
-        </button>
-      </Card>
     </div>
   );
 };
+
 export default Features;

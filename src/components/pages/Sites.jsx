@@ -32,19 +32,18 @@ const Sites = () => {
         userService.getAll()
       ]);
 
-// Combine sites with company and user data
+      // Combine sites with company and user data
       const sitesWithDetailsData = sitesData.map(site => {
-        const company = companiesData.find(c => c.Id_c === (site.companyId_c?.Id || site.companyId_c));
-        const siteUsers = usersData.filter(user => (user.siteId_c?.Id || user.siteId_c) === site.Id_c);
-        const manager = usersData.find(user => user.Id_c === (site.managerId_c?.Id || site.managerId_c));
+        const company = companiesData.find(c => c.Id === site.companyId);
+        const siteUsers = usersData.filter(user => user.siteId === site.Id);
+        const manager = usersData.find(user => user.Id === site.managerId);
 
         return {
           ...site,
-          Id: site.Id_c,
           company,
           userCount: siteUsers.length,
           manager,
-          activeUsers: siteUsers.filter(user => user.status_c === "active").length
+          activeUsers: siteUsers.filter(user => user.status === "active").length
         };
       });
 
@@ -61,18 +60,18 @@ const Sites = () => {
     loadSites();
   }, []);
 
-const getSiteName = (site) => {
-    return site[`name${currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1)}_c`] || site.nameEn_c;
+  const getSiteName = (site) => {
+    return site[`name${currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1)}`] || site.nameEn;
   };
 
-const getCompanyName = (company) => {
+  const getCompanyName = (company) => {
     if (!company) return "Unknown Company";
-    return company[`name${currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1)}_c`] || company.nameEn_c;
+    return company[`name${currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1)}`] || company.nameEn;
   };
 
   const getManagerName = (manager) => {
-if (!manager) return "No Manager";
-    return manager[`fullName${currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1)}_c`] || manager.fullNameEn_c;
+    if (!manager) return "No Manager";
+    return manager[`fullName${currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1)}`] || manager.fullNameEn;
   };
 
   if (loading) return <Loading />;
@@ -92,8 +91,8 @@ if (!manager) return "No Manager";
       <Empty
         icon="MapPin"
         title="No Sites Yet"
-message="No sites found. Start by adding your first site to manage users and operations."
-        actionLabel="Create Site"
+        message={t("empty.sites")}
+        actionLabel={t("actions.create") + " Site"}
         onAction={() => toast.info("Create site functionality will be added in future updates")}
       />
     );
@@ -105,7 +104,7 @@ message="No sites found. Start by adding your first site to manage users and ope
       <div className="flex items-center justify-between">
         <div className="space-y-2">
           <h1 className="text-3xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
-Sites
+            {t("nav.sites")}
           </h1>
           <p className="text-slate-600">
             Manage individual hospitality locations and their operations
@@ -115,8 +114,8 @@ Sites
         <Button 
           icon="Plus" 
           onClick={() => toast.info("Create site functionality will be added in future updates")}
->
-          Create Site
+        >
+          {t("actions.create")} Site
         </Button>
       </div>
 
@@ -134,8 +133,8 @@ Sites
                 <div className="w-12 h-12 bg-gradient-to-br from-sky-600 to-primary-500 rounded-lg flex items-center justify-center">
                   <ApperIcon name="MapPin" className="h-6 w-6 text-white" />
                 </div>
-<Badge variant={site.status_c === "active" ? "success" : "danger"}>
-                  {site.status_c === "active" ? "Active" : site.status_c === "inactive" ? "Inactive" : site.status_c}
+                <Badge variant={site.status === "active" ? "success" : "danger"}>
+                  {t(`status.${site.status}`)}
                 </Badge>
               </div>
 
@@ -150,8 +149,8 @@ Sites
                     {getCompanyName(site.company)}
                   </div>
                   <div className="flex items-center text-sm text-slate-500">
-<ApperIcon name="MapPin" className="h-4 w-4 mr-1" />
-                    {site.city_c}
+                    <ApperIcon name="MapPin" className="h-4 w-4 mr-1" />
+                    {site.city}
                   </div>
                 </div>
               </div>
@@ -175,7 +174,7 @@ Sites
               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-200">
                 <div className="text-center">
                   <p className="text-2xl font-bold text-sky-600">{site.userCount}</p>
-<p className="text-xs text-slate-500 font-medium">Users</p>
+                  <p className="text-xs text-slate-500 font-medium">{t("common.users")}</p>
                 </div>
                 <div className="text-center">
                   <p className="text-2xl font-bold text-emerald-600">{site.activeUsers}</p>
@@ -220,8 +219,8 @@ Sites
             <p className="text-sm text-slate-500 font-medium">Total Sites</p>
           </div>
           <div>
-<p className="text-3xl font-bold text-emerald-600">
-              {sitesWithDetails.filter(site => site.status_c === "active").length}
+            <p className="text-3xl font-bold text-emerald-600">
+              {sitesWithDetails.filter(site => site.status === "active").length}
             </p>
             <p className="text-sm text-slate-500 font-medium">Active Sites</p>
           </div>

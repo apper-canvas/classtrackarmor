@@ -1,44 +1,93 @@
 [
   {
     "Id": 1,
-    "name": "John Doe",
-    "email": "john.doe@student.edu",
-    "role": "student",
-    "password": "password123"
+    "email": "ahmed.hassan@atlasgroup.ma",
+    "fullNameAr": "أحمد حسن",
+    "fullNameFr": "Ahmed Hassan",
+    "fullNameEn": "Ahmed Hassan",
+    "roleId": 1,
+    "siteId": null,
+    "preferredLanguage": "ar",
+    "status": "active",
+    "lastLoginAt": "2024-12-28T08:30:00Z",
+    "createdAt": "2024-01-15T08:30:00Z"
   },
   {
     "Id": 2,
-    "name": "Jane Smith",
-    "email": "jane.smith@student.edu",
-    "role": "student",
-    "password": "password123"
+    "email": "fatima.benali@atlasgroup.ma",
+    "fullNameAr": "فاطمة بن علي",
+    "fullNameFr": "Fatima Benali",
+    "fullNameEn": "Fatima Benali",
+    "roleId": 2,
+    "siteId": 1,
+    "preferredLanguage": "fr",
+    "status": "active",
+    "lastLoginAt": "2024-12-27T15:45:00Z",
+    "createdAt": "2024-01-20T09:00:00Z"
   },
   {
     "Id": 3,
-    "name": "Mike Johnson",
-    "email": "mike.johnson@student.edu",
-    "role": "student",
-    "password": "password123"
+    "email": "mohamed.alami@atlasgroup.ma",
+    "fullNameAr": "محمد العلمي",
+    "fullNameFr": "Mohamed Alami",
+    "fullNameEn": "Mohamed Alami",
+    "roleId": 2,
+    "siteId": 2,
+    "preferredLanguage": "fr",
+    "status": "active",
+    "lastLoginAt": "2024-12-26T12:20:00Z",
+    "createdAt": "2024-01-25T11:30:00Z"
   },
   {
     "Id": 4,
-    "name": "Emily Davis",
-    "email": "emily.davis@student.edu",
-    "role": "student",
-    "password": "password123"
+    "email": "omar.benjelloun@saharahotels.ma",
+    "fullNameAr": "عمر بن جلون",
+    "fullNameFr": "Omar Benjelloun",
+    "fullNameEn": "Omar Benjelloun",
+    "roleId": 2,
+    "siteId": 3,
+    "preferredLanguage": "ar",
+    "status": "active",
+    "lastLoginAt": "2024-12-27T09:15:00Z",
+    "createdAt": "2024-02-25T13:15:00Z"
   },
   {
     "Id": 5,
-    "name": "Sarah Johnson",
-    "email": "sarah.johnson@teacher.edu",
-    "role": "teacher",
-    "password": "password123"
+    "email": "sarah.martinez@medresorts.com",
+    "fullNameAr": "سارة مارتينيز",
+    "fullNameFr": "Sarah Martinez",
+    "fullNameEn": "Sarah Martinez",
+    "roleId": 2,
+    "siteId": 4,
+    "preferredLanguage": "en",
+    "status": "active",
+    "lastLoginAt": "2024-12-28T07:30:00Z",
+    "createdAt": "2024-03-15T16:20:00Z"
   },
   {
     "Id": 6,
-    "name": "Dr. Robert Wilson",
-    "email": "robert.wilson@teacher.edu",
-    "role": "teacher",
-    "password": "password123"
+    "email": "khalid.tazi@atlasgroup.ma",
+    "fullNameAr": "خالد التازي",
+    "fullNameFr": "Khalid Tazi",
+    "fullNameEn": "Khalid Tazi",
+    "roleId": 3,
+    "siteId": 1,
+    "preferredLanguage": "ar",
+    "status": "active",
+    "lastLoginAt": "2024-12-27T16:00:00Z",
+    "createdAt": "2024-02-01T10:00:00Z"
+  },
+  {
+    "Id": 7,
+    "email": "aicha.idrissi@atlasgroup.ma",
+    "fullNameAr": "عائشة الإدريسي",
+    "fullNameFr": "Aicha Idrissi",
+    "fullNameEn": "Aicha Idrissi",
+    "roleId": 3,
+    "siteId": 2,
+    "preferredLanguage": "fr",
+    "status": "invited",
+    "lastLoginAt": null,
+    "createdAt": "2024-12-20T14:30:00Z"
   }
 ]

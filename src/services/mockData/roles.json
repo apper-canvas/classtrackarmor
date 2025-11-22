@@ -1,0 +1,29 @@
+[
+  {
+    "Id": 1,
+    "code": "ceo",
+    "nameAr": "الرئيس التنفيذي",
+    "nameFr": "PDG",
+    "nameEn": "CEO",
+    "scopeLevel": "company",
+    "isSystemRole": true
+  },
+  {
+    "Id": 2,
+    "code": "manager",
+    "nameAr": "المدير",
+    "nameFr": "Gestionnaire",
+    "nameEn": "Manager",
+    "scopeLevel": "site",
+    "isSystemRole": true
+  },
+  {
+    "Id": 3,
+    "code": "user",
+    "nameAr": "المستخدم",
+    "nameFr": "Utilisateur",
+    "nameEn": "User",
+    "scopeLevel": "personal",
+    "isSystemRole": true
+  }
+]

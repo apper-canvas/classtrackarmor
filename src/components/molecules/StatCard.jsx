@@ -27,10 +27,8 @@ const StatCard = ({
   return (
     <Card className={cn("", className)} gradient={gradient}>
       <div className="flex items-center justify-between">
-<div className="space-y-2">
-          <p className="text-sm font-medium text-slate-600">
-            {typeof title === 'object' ? (title.en || title.fr || title.ar || 'Stat') : title}
-          </p>
+        <div className="space-y-2">
+          <p className="text-sm font-medium text-slate-600">{title}</p>
           <p className="text-3xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
             {value}
           </p>

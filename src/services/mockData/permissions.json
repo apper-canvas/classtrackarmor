@@ -1,0 +1,135 @@
+[
+  {
+    "Id": 1,
+    "roleId": 1,
+    "resource": "companies",
+    "action": "create",
+    "scope": "all"
+  },
+  {
+    "Id": 2,
+    "roleId": 1,
+    "resource": "companies",
+    "action": "read",
+    "scope": "all"
+  },
+  {
+    "Id": 3,
+    "roleId": 1,
+    "resource": "companies",
+    "action": "update",
+    "scope": "all"
+  },
+  {
+    "Id": 4,
+    "roleId": 1,
+    "resource": "companies",
+    "action": "delete",
+    "scope": "all"
+  },
+  {
+    "Id": 5,
+    "roleId": 1,
+    "resource": "sites",
+    "action": "create",
+    "scope": "all"
+  },
+  {
+    "Id": 6,
+    "roleId": 1,
+    "resource": "sites",
+    "action": "read",
+    "scope": "all"
+  },
+  {
+    "Id": 7,
+    "roleId": 1,
+    "resource": "sites",
+    "action": "update",
+    "scope": "all"
+  },
+  {
+    "Id": 8,
+    "roleId": 1,
+    "resource": "sites",
+    "action": "delete",
+    "scope": "all"
+  },
+  {
+    "Id": 9,
+    "roleId": 1,
+    "resource": "users",
+    "action": "create",
+    "scope": "all"
+  },
+  {
+    "Id": 10,
+    "roleId": 1,
+    "resource": "users",
+    "action": "read",
+    "scope": "all"
+  },
+  {
+    "Id": 11,
+    "roleId": 1,
+    "resource": "users",
+    "action": "update",
+    "scope": "all"
+  },
+  {
+    "Id": 12,
+    "roleId": 1,
+    "resource": "users",
+    "action": "delete",
+    "scope": "all"
+  },
+  {
+    "Id": 13,
+    "roleId": 2,
+    "resource": "sites",
+    "action": "read",
+    "scope": "site"
+  },
+  {
+    "Id": 14,
+    "roleId": 2,
+    "resource": "sites",
+    "action": "update",
+    "scope": "site"
+  },
+  {
+    "Id": 15,
+    "roleId": 2,
+    "resource": "users",
+    "action": "create",
+    "scope": "site"
+  },
+  {
+    "Id": 16,
+    "roleId": 2,
+    "resource": "users",
+    "action": "read",
+    "scope": "site"
+  },
+  {
+    "Id": 17,
+    "roleId": 2,
+    "resource": "users",
+    "action": "update",
+    "scope": "site"
+  },
+  {
+    "Id": 18,
+    "roleId": 3,
+    "resource": "users",
+    "action": "read",
+    "scope": "own"
+  },
+  {
+    "Id": 19,
+    "roleId": 3,
+    "resource": "users",
+    "action": "update",
+    "scope": "own"
+  }
+]

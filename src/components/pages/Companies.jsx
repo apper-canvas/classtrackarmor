@@ -35,19 +35,18 @@ const Companies = () => {
 
       setCompanies(companiesData);
 
-// Calculate stats for each company
+      // Calculate stats for each company
       const companiesWithStatsData = companiesData.map(company => {
-        const companySites = sitesData.filter(site => (site.companyId_c?.Id || site.companyId_c) === company.Id_c);
+        const companySites = sitesData.filter(site => site.companyId === company.Id);
         const companyUsers = usersData.filter(user => 
-          companySites.some(site => site.Id_c === (user.siteId_c?.Id || user.siteId_c))
+          companySites.some(site => site.Id === user.siteId)
         );
 
         return {
           ...company,
-          Id: company.Id_c,
           siteCount: companySites.length,
           userCount: companyUsers.length,
-          activeSites: companySites.filter(site => site.status_c === "active").length
+          activeSites: companySites.filter(site => site.status === "active").length
         };
       });
 
@@ -64,8 +63,8 @@ const Companies = () => {
     loadCompanies();
   }, []);
 
-const getCompanyName = (company) => {
-    return company[`name${currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1)}_c`] || company.nameEn_c;
+  const getCompanyName = (company) => {
+    return company[`name${currentLanguage.charAt(0).toUpperCase() + currentLanguage.slice(1)}`] || company.nameEn;
   };
 
   if (loading) return <Loading />;
@@ -85,8 +84,8 @@ const getCompanyName = (company) => {
       <Empty
         icon="Building2"
         title="No Companies Yet"
-message="No companies found. Start by adding your first company to manage sites and users."
-        actionLabel="Create Company"
+        message={t("empty.companies")}
+        actionLabel={t("actions.create") + " Company"}
         onAction={() => toast.info("Create company functionality will be added in future updates")}
       />
     );
@@ -98,7 +97,7 @@ message="No companies found. Start by adding your first company to manage sites 
       <div className="flex items-center justify-between">
         <div className="space-y-2">
           <h1 className="text-3xl font-bold bg-gradient-to-r from-slate-900 to-slate-700 bg-clip-text text-transparent">
-Companies
+            {t("nav.companies")}
           </h1>
           <p className="text-slate-600">
             Manage hospitality companies and their organizational structure
@@ -127,8 +126,8 @@ Companies
                 <div className="w-12 h-12 bg-gradient-to-br from-primary-600 to-sky-500 rounded-lg flex items-center justify-center">
                   <ApperIcon name="Building2" className="h-6 w-6 text-white" />
                 </div>
-<Badge variant={company.status_c === "active" ? "success" : "danger"}>
-                  {company.status_c === "active" ? "Active" : company.status_c === "inactive" ? "Inactive" : company.status_c}
+                <Badge variant={company.status === "active" ? "success" : "danger"}>
+                  {t(`status.${company.status}`)}
                 </Badge>
               </div>
 
@@ -138,8 +137,8 @@ Companies
                   {getCompanyName(company)}
                 </h3>
                 <div className="flex items-center text-sm text-slate-500">
-<ApperIcon name="Globe" className="h-4 w-4 mr-1" />
-                  Primary: {company.primaryLanguage_c?.toUpperCase()}
+                  <ApperIcon name="Globe" className="h-4 w-4 mr-1" />
+                  Primary: {company.primaryLanguage.toUpperCase()}
                 </div>
               </div>
 
@@ -147,11 +146,11 @@ Companies
               <div className="grid grid-cols-2 gap-4 pt-4 border-t border-slate-200">
                 <div className="text-center">
                   <p className="text-2xl font-bold text-primary-600">{company.siteCount}</p>
-<p className="text-xs text-slate-500 font-medium">Sites</p>
+                  <p className="text-xs text-slate-500 font-medium">{t("common.sites")}</p>
                 </div>
                 <div className="text-center">
-<p className="text-2xl font-bold text-sky-600">{company.userCount}</p>
-                  <p className="text-xs text-slate-500 font-medium">Users</p>
+                  <p className="text-2xl font-bold text-sky-600">{company.userCount}</p>
+                  <p className="text-xs text-slate-500 font-medium">{t("common.users")}</p>
                 </div>
               </div>
 

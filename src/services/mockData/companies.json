@@ -1,0 +1,29 @@
+[
+  {
+    "Id": 1,
+    "nameAr": "مجموعة الأطلس للضيافة",
+    "nameFr": "Groupe Atlas Hospitalité",
+    "nameEn": "Atlas Hospitality Group",
+    "primaryLanguage": "fr",
+    "createdAt": "2024-01-15T08:30:00Z",
+    "status": "active"
+  },
+  {
+    "Id": 2,
+    "nameAr": "فنادق الصحراء الذهبية",
+    "nameFr": "Hôtels du Sahara Doré",
+    "nameEn": "Golden Sahara Hotels",
+    "primaryLanguage": "ar",
+    "createdAt": "2024-02-20T10:15:00Z",
+    "status": "active"
+  },
+  {
+    "Id": 3,
+    "nameAr": "منتجعات البحر الأبيض المتوسط",
+    "nameFr": "Resorts Méditerranéens",
+    "nameEn": "Mediterranean Resorts",
+    "primaryLanguage": "en",
+    "createdAt": "2024-03-10T14:45:00Z",
+    "status": "active"
+  }
+]
