@@ -2,7 +2,7 @@ import React from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { useTranslation } from '@/hooks/useTranslation';
 import { ApperIcon } from '@/components/ApperIcon';
-import { Card } from '@/components/atoms/Card';
+import Card from '@/components/atoms/Card';
 import { Button } from '@/components/atoms/Button';
 
 const AdminPage = () => {
