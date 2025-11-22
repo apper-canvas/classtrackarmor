@@ -5,7 +5,7 @@ import { cn } from "@/utils/cn";
 import ApperIcon from "@/components/ApperIcon";
 import Input from "@/components/atoms/Input";
 import Button from "@/components/atoms/Button";
-import { Card, CardContent } from "@/components/atoms/Card";
+import Card, { CardContent } from "@/components/atoms/Card";
 import { useAuth } from "@/context/AuthContext";
 
 const LoginPage = () => {
