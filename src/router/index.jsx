@@ -8,7 +8,6 @@ const Companies = lazy(() => import("@/components/pages/Companies"));
 const Sites = lazy(() => import("@/components/pages/Sites"));
 const Users = lazy(() => import("@/components/pages/Users"));
 const Settings = lazy(() => import("@/components/pages/Settings"));
-const LoginPage = lazy(() => import("@/components/pages/LoginPage"));
 const NotFound = lazy(() => import("@/components/pages/NotFound"));
 
 const LoadingFallback = () => (
@@ -32,14 +31,6 @@ const mainRoutes = [
     element: (
       <Suspense fallback={<LoadingFallback />}>
         <Dashboard />
-      </Suspense>
-    )
-  },
-  {
-    path: "login",
-    element: (
-      <Suspense fallback={<LoadingFallback />}>
-        <LoginPage />
       </Suspense>
     )
   },

@@ -20,23 +20,7 @@ const Card = ({
     >
       {children}
     </div>
-);
-};
-
-const CardContent = ({ 
-  children, 
-  className,
-  ...props 
-}) => {
-  return (
-    <div
-      className={cn("", className)}
-      {...props}
-    >
-      {children}
-    </div>
   );
 };
 
 export default Card;
-export { CardContent };

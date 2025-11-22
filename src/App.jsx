@@ -2,11 +2,10 @@ import React from "react";
 import { RouterProvider } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import { router } from "@/router";
-import { AuthProvider } from "@/context/AuthContext";
 
 function App() {
   return (
-    <AuthProvider>
+    <>
       <RouterProvider router={router} />
       <ToastContainer
         position="top-right"
@@ -20,7 +19,7 @@ function App() {
         pauseOnHover
         className="toast-container"
       />
-    </AuthProvider>
+    </>
   );
 }
 
